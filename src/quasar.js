@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 import './styles/quasar.styl'
 import '@quasar/extras/material-icons/material-icons.css'
+
 import {
   Quasar, 
   QLayout,
@@ -20,11 +21,20 @@ import {
   QTable,
   QTh,
   QTr,
-  QTd
+  QTd,
+  QForm,
+  QInput,
+  QToggle,
+  Notify,
+  QBtnDropdown,
+  ClosePopup,
+  QSelect
 } from 'quasar'
 
 Vue.use(Quasar, {
-  config: {},
+  config: {
+    notify: {}
+  },
   components: {
     QLayout,
     QHeader,
@@ -42,10 +52,18 @@ Vue.use(Quasar, {
     QTable,
     QTh,
     QTr,
-    QTd
+    QTd,
+    QForm,
+    QInput,
+    QToggle,
+    Notify,
+    QBtnDropdown,
+    QSelect
   },
   directives: {
+    ClosePopup
   },
   plugins: {
+    Notify
   }
  })

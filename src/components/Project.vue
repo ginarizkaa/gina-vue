@@ -3,7 +3,7 @@
         <div class="q-pa-md">
             <q-table
             class="my-sticky-header-table"
-            title="Treats"
+            title="Data Projects"
             :data="data"
             :columns="columns"
             row-key="name"
@@ -31,6 +31,7 @@
     top 0
     opacity 1
     z-index 1
+
 </style>
 
 <script>
@@ -100,6 +101,14 @@ export default {
           sortable: true
         },
         {
+          name: 'employeeName',
+          required: true,
+          label: 'Employee Name',
+          align: 'left',
+          field: row => row.employee[0].firstName,
+          sortable: true
+        },
+        {
           name: 'createAt',
           required: true,
           label: 'TimeStamps',
@@ -124,6 +133,15 @@ export default {
       }).catch(function(err){
           console.log(err)
       })
+
+      // project.getDetailProject(window).then(function(datas){
+      //     return datas
+      // }).then(function(res){
+      //     console.log(res)
+      //     self.data = res
+      // }).catch(function(err){
+      //     console.log(err)
+      // })
   }
 
 }
